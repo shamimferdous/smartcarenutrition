@@ -1,0 +1,57 @@
+<!-- Checkout Quantity Section -->
+<section class="checkout-container">
+    <div class="checkout-box">
+        <h2 class="checkout-h2">Nombre del producto - {{product.name}}</h2>
+        <h3 class="checkout-h3">PVP - {{product.price}}€
+            <span id="demo"> <script>document.write('x 1 = ' + {{product.price}} + ' €' )</script> </span>
+        </h3>
+
+
+
+        <form id="quantity-form" name="quantity-form" onsubmit="return validateForm()" action="/add-to-cart" method="POST">
+            <input onkeyup="myFunction(this.value)" onchange="myFunction(this.value)" class="alpha-input" value="1" type="number" name="productQuantity" id="quantity"
+                placeholder="Número de unidad" required>
+
+            <input type="hidden" name="productName" value="{{product.name}}" id="">
+            <input type="hidden" name="productPrice" value="{{product.price}}" id="">
+            <input type="hidden" name="productID" value="{{product.ID}}">
+        </form>
+        <button id="next-button" form="quantity-form" type="submit" class="checkout-button">Añadir al carrito</button>
+        
+    </div>
+</section>
+
+
+<script>
+    function myFunction(qty) {
+        console.log(qty);
+        let total = (qty * 15);
+        document.getElementById("demo").innerHTML = ` x ${qty} = ${total}€`;
+        
+        //if(qty > 0) {
+             //document.getElementById("next-button").disabled = false;
+        //} else {
+           //document.getElementById("next-button").disabled = true;
+        //}
+    }
+</script>
+
+<script>
+function validateForm() {
+  var x = document.forms["quantity-form"]["productQuantity"].value;
+  if (x < 0) {
+    alert("Minimum quantity for Adding Product In Cart is '1'");
+    return false;
+  }
+}
+</script>
+
+{{!-- <script>
+function Bhai() {
+    console.log(`Working`);
+    console.log(document.getElementById("quantity").value);
+    if(document.getElementById("quantity").value > 0) {
+        document.getElementById("next-button").disabled = false;
+    }
+}
+</script> --}}

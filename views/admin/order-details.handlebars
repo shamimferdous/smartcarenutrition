@@ -1,0 +1,78 @@
+<div class="page-content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Order Details</h2>
+        </div>
+    </div>
+
+
+
+    <section class="no-padding-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="block margin-bottom-sm">
+                        <div class="title"><strong>Order ID: {{order.orderID}}</strong></div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+
+                                    <tr>
+                                        <td>Order Date: </td>
+                                        <td>{{generateTime order.date 'MMMM-D-YYYY - LT'}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Customer Name: </td>
+                                        <td>{{order.customerName}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Paypal Pay ID: </td>
+                                        <td>{{order.paypalPayID}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Customer Cell: </td>
+                                        <td>{{order.customerCell}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Customer Name: </td>
+                                        <td>{{order.customerEmail}}</td>
+                                    </tr>
+
+                                    <tr style="color: #429244;">
+                                        <td>Order Details: </td>
+                                        <td>
+                                            {{#each order.cart}}
+                                            <span class="align-left">{{this.productName}} - </span> <span class="align-left"> {{this.productQuantity}} x {{this.productPrice}}€</span> <br>
+                                            {{/each}}
+                                        </td>
+                                    </tr>
+
+                                    <tr style="color: #DB6574;">
+                                        <td>Total: </td>
+                                        <td>{{order.total}}</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Shipping Address: </td>
+                                        <td>{{order.shippingAddress}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Order Status:</td>
+                                        <td>{{order.orderStatus}}</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+</div>

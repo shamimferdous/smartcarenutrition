@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'Industry';
+    src: url('Industry-Light.eot');
+    src: local('Industry Light'), local('Industry-Light'),
+        url('Industry-Light.eot?#iefix') format('embedded-opentype'),
+        url('Industry-Light.woff') format('woff'),
+        url('Industry-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Industry';
+    src: url('Industry-Bold.eot');
+    src: local('Industry Bold'), local('Industry-Bold'),
+        url('Industry-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Industry-Bold.woff') format('woff'),
+        url('Industry-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Industry-Book';
+    src: url('Industry-Book.eot');
+    src: local('Industry Book'), local('Industry-Book'),
+        url('Industry-Book.eot?#iefix') format('embedded-opentype'),
+        url('Industry-Book.woff') format('woff'),
+        url('Industry-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+:root {
+
+    --color-primary: #D6D6D4;
+    --color-white: #F2F2F2;
+    --color-black: #141414;
+
+    --color-whey: #AD7B4C;
+    --color-amino: #EBE634;
+    --color-push: #866255;
+    --color-crea: #75B83F;
+
+}   
+
+
+
+$bp-largest: 72.5em; //1160px
+$bp-large: 64.68em; //1035px
+$bp-medium-large: 56.25em; //900px
+$bp-medium: 47.81em; //765px
+$bp-small-large: 37.5em; //600px
+$bp-small-medium: 28.43em;//455px
+$bp-small: 24.375em;//455px
+
+
+
+
+// &:hover {
+//     color: var(--color-primary);
+//     transform: translateY(1rem) skewY(3deg);
+//     background-color: #333333;
+// }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+*,
+*::after,
+a::before {
+    box-sizing: inherit;
+}
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+
+    @media only screen and(max-width: $bp-large) {
+        font-size: 55%;
+    }
+
+    @media only screen and(max-width: $bp-medium) {
+        font-size: 45%;
+    }
+
+    @media only screen and(max-width: $bp-small) {
+        font-size: 40%;
+    }
+
+}
+
+
+body {
+    font-family: 'Industry-Book', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-white);
+    min-height: 100vh;
+    background-color: #F7F7F7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--color-black); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+

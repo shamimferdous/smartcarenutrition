@@ -1,0 +1,27 @@
+<!-- Checkout Quantity Section -->
+<section class="checkout-container">
+    <div class="checkout-box">
+
+        <h2 class="checkout-h2">Login to Smart Care Nutrition</h2>
+        </h3>
+
+                {{> home/form-msgs}}
+
+
+        <form class="login-form" action="/loginNOW" method="POST">
+
+            <label class="checkout-label">Email Address * :</label>
+            <input required class="checkout-input" type="email" name="email" placeholder="Entrez votre email">
+
+
+            <label class="checkout-label">Password * :</label>
+            <input required class="checkout-input" type="password" name="password" placeholder="Tapez votre mot de passe">
+            
+
+            <button class="alpha-button"> <svg class="alpha-button--icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Log In</button>
+        </form>
+
+
+
+    </div>
+</section>

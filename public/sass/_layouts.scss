@@ -1,0 +1,418 @@
+.header {
+    height: 97vh;
+    background-image: linear-gradient(to right bottom, rgba(#141414, 1), rgba(#000, .8)),
+        url(../img/HERO.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //margin-top: 8rem;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        height: 65vh;
+        clip-path: polygon(0 0, 100% 0, 100% 55vh, 0 100%);
+    }
+
+}
+
+.who-are-we {
+    padding: 5rem 10rem;
+
+    @media only screen and(max-width: $bp-medium) {
+        padding: 5rem 2rem;
+    }
+}
+
+.products {
+    margin-top: 5rem;
+    padding: 15rem 10rem;
+    height: auto;
+    background-image: linear-gradient(to right bottom, rgba(#141414, 1), rgba(#000, .8)),
+    url(../img/products-bg.jpeg);
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    background-size: cover;
+    background-position: center;
+
+    @media only screen and(min-width: 1650px) {
+        margin-top: 25rem;
+    }
+
+    @media only screen and(max-width: $bp-medium) {
+        padding: 22rem 10rem;
+    }
+}
+
+.goals {
+    padding: 10rem;
+}
+
+
+.features {
+    height: auto;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .9), rgba(#000, .8)),
+    url(../img/features-bg.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    margin: 0 10rem;
+    padding: 10rem 5rem;
+    margin-bottom: 12rem;
+
+    @media only screen and(max-width: $bp-small-large) {
+        margin: 0 0rem;
+    }
+
+    @media only screen and(max-width: $bp-small-medium) {
+        background-position: right;
+        clip-path: polygon(
+            /* X and Y points */
+            0 20%,
+            20% 0,
+            100% 0,
+            100% 80%,
+            80% 100%,
+            0 100%
+          );
+
+    margin-bottom: 10rem;
+
+    }
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 8rem;
+    //background-color: var(--color-black);
+    background-color: #121212;
+    z-index: 69000000;
+    padding: 1rem 5rem;
+    opacity: .9;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        padding: 1rem 2rem;
+    }
+
+    &__logo {
+        height: 6rem;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+
+
+        &--item {
+
+            &--icon {
+                margin-right: 1rem;
+            }
+
+            font-family: 'Industry', sans-serif;
+            font-size: 1.9rem;
+            display: flex;
+            align-items: center;
+            color: var(--color-white);
+            transition: all .1s;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            &:hover {
+                color: var(--color-primary);
+                transform: translateY(1rem) skewY(3deg);
+                background-color: #333333;
+            }
+        }
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        padding: 1rem;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: all .3s;
+        margin-left: 1rem;
+
+
+        &:hover {
+            border: 1px solid var(--color-primary);
+            background-color: var(--color-black);
+            color: var(--color-white);
+            transform: translateY(1rem) skewY(3deg);
+        }
+
+        &--text {
+            font-family: 'Industry', sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-left: 1rem;
+        }
+    }
+}
+
+
+
+.footer {
+    //height: 70vh;
+    background-color: #333333;
+    //margin-top: 12rem;
+    padding: 5rem 0;
+
+    &__logo-box {
+        padding: 6rem;
+        display: flex;
+        justify-content: center;
+
+        &__logo {
+            height: 15rem;
+        }
+    }
+
+    &__box {
+        padding: 2rem 10rem;
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and(max-width: $bp-small-medium) {
+            padding: 2rem 3rem;
+        }
+
+        &__menu {
+            flex: 0 0 35%;
+            border-top: 1px solid var(--color-white);
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+
+            @media only screen and(max-width: $bp-medium-large) {
+                flex: 0 0 45%;
+            }
+
+            &--item {
+                margin-top: 2rem;
+                font-size: 2rem;
+                transition: all .2s;
+                display: inline-block;
+
+                &:hover {
+                    color: var(--color-primary);
+                    transform: translateY(1rem) skewY(3deg);
+                    background-color: var(--color-black);
+                }
+
+                @media only screen and(max-width: $bp-small-large) {
+                    font-size: 1.5rem;
+                }
+                
+            }
+        }
+
+        &__about {
+            flex: 0 0 35%;
+            border-top: 1px solid var(--color-white);
+
+            @media only screen and(max-width: $bp-medium-large) {
+                flex: 0 0 45%;
+            }
+
+            &--paragraph {
+                margin-top: 2rem;
+                font-size: 1.2rem;
+
+                @media only screen and(max-width: $bp-small-large) {
+                    font-size: 1.5rem;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+.product-header {
+    //margin-top: 8rem;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .2), rgba(#000, .2)),
+        url(../img/whey-header.jpeg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    padding: 3rem 3rem 3rem 10rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    //margin-top: 8rem;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        height: 95vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__title-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 12rem;
+        padding-bottom: 5rem;
+        background-color: var(--color-black);
+
+        &--title {
+            font-size: 8rem;
+            font-family: "Teko", sans-serif;
+            font-weight: 400;
+            border-bottom: 1px solid var(--color-white);
+            margin-bottom: 2rem;
+            color: var(--color-white);
+        }
+
+        &--subtitle {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: .4rem;
+            color: var(--color-white);
+        }
+    }
+}
+
+
+
+.product-header-amino {
+    //margin-top: 8rem;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .2), rgba(#000, .2)),
+        url(../img/amino-header.jpeg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    padding: 3rem 3rem 3rem 10rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    //margin-top: 8rem;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        height: 95vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    
+}
+
+
+
+
+.product-header-push {
+    //margin-top: 8rem;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .2), rgba(#000, .2)),
+        url(../img/push-header.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    padding: 3rem 3rem 3rem 10rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    //margin-top: 8rem;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        height: 95vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    
+}
+
+
+.product-header-crea {
+    //margin-top: 8rem;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .2), rgba(#000, .2)),
+        url(../img/crea-header.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    padding: 3rem 3rem 3rem 10rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    //margin-top: 8rem;
+
+    @media only screen and(max-width: $bp-small-medium) {
+        height: 95vh;
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    
+}
+
+
+.product-features {
+
+    padding: 5rem 10rem;
+
+    @media only screen and(max-width: $bp-small-large) {
+        padding: 5rem;
+    }
+}
+
+
+
+.checkout-container {
+    height: auto;
+    background-color: var(--color-black);
+    padding: 20rem 20rem;
+    background-image: linear-gradient(to right bottom, rgba(#141414, .9), rgba(#000, 1)),
+        url(../img/crea-header.jpeg);
+    background-size: cover;
+
+    @media only screen and(max-width: $bp-small-large) {
+        padding: 20rem 5rem;
+    }
+}
+
+.checkout-box {
+    padding: 10rem;
+    border: 1px solid var(--color-primary);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    @media only screen and(max-width: $bp-small-large) {
+        padding: 5rem;
+    }
+}
+
+
+.checkout-box-final {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    @media only screen and(max-width: $bp-medium-large) {
+        flex-direction: column-reverse;
+    }
+
+}

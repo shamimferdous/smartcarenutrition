@@ -1,0 +1,10 @@
+.clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-icon {
+    margin-right: 5px;
+    margin-bottom: 2px;
+}

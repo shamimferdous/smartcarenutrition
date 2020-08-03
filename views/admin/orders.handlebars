@@ -1,0 +1,77 @@
+<div class="page-content">
+    <div class="page-header">
+        <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">All Orders</h2>
+        </div>
+    </div>
+
+
+
+    <section class="no-padding-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="block margin-bottom-sm">
+                        <div class="title"><strong>*Haga clic en la identificación del pedido para ver todos los detalles del pedido.</strong></div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Order ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Order</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {{#each orders}}
+                                    <tr>
+                                        <th scope="row"> {{generateTime date 'MM-D-YY LT'}} </th>
+                                        <th> <a href="/admin/order-details/{{orderID}}">{{orderID}}</a> </th>
+                                        <td> {{customerName}} </td>
+                                        <td> {{customerEmail}} </td>
+                                        <td style="color: #429244;">
+
+                                            {{#each cart}}
+                                            <span class="align-left">{{productName}} - </span> <span class="align-left"> {{productQuantity}} x {{productPrice}}€</span> <br>
+                                            {{/each}}
+
+                                        </td>
+                                        <td style="font-weight: bold; text-decoration: underline;"> {{total}}€</td>
+                                        <td>
+                                            <form action="/admin/order-status-update?_method=PUT" method="POST">
+                                                <select class="form-control" name="orderStatus">
+                                                    
+                                                    {{#select orderStatus}}
+                                                    <option value="Paid & Received">Paid & Received</option>
+                                                    <option value="In Transite">In Transit</option>
+                                                    <option value="Delivered">Delivered</option>
+                                                    {{/select}}
+
+                                                </select>
+                                            
+                                        </td>
+
+                                        <td>
+                                                <input type="hidden" name="_id" value="{{_id}}">
+                                                <button class="btn btn-success"> <i class="fa fa-save"></i> </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+</div>

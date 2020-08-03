@@ -1,0 +1,42 @@
+<!-- Checkout Section -->
+<section class="checkout-container">
+    <h1 class="products__title">Tus ordenes</h1>
+
+    {{#each orders}}
+
+    <div class="checkout-box-final user-dashboard-space">
+        <div class="checkout-customer">
+
+            <label class="checkout-label">Order ID :  {{orderID}}</label>
+            <label class="checkout-label">Paypal Pay ID :  {{paypalPayID}}</label>
+            <label class="checkout-label">Order Status :  <b style="padding: 3px; outline: 1px solid yellow; margin-left: 4px;">In Transit</b> </label>
+
+
+        </div>
+        <div class="checkout-product">
+            <table class="table">
+                <thead class="checkout-thead">
+                    <tr>
+                        <th>Order Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        {{#each this.cart}}
+                        <td class="twin"> <span class="align-left">{{productName}}</span> <span class="align-left"> {{productQuantity}} x {{productPrice}}€ </span> <span class="align-left"><script>document.write({{ productPrice }} * {{ productQuantity }})</script>€</span> </td>
+                        {{/each}}
+                        <td class="twin"> <span class="align-left"></span> <span class="align-left">Total:</span> <span class="align-left">{{#cartTotal cart}} {{/cartTotal}}€</span> </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    {{/each}}
+
+    
+</section>

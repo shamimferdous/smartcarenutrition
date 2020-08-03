@@ -1,0 +1,25 @@
+<!-- Checkout Quantity Section -->
+<section class="checkout-container">
+    <div class="checkout-box">
+
+        {{> home/form-msgs}}
+
+        <h2 class="checkout-h2">See Your Order Status & Details</h2>
+            <span id="demo"></span>
+        </h3>
+
+
+        <form class="login-form" action="/user-dashboard" method="POST">
+
+            <label class="checkout-label">Your Email Address * :</label>
+            <input required class="checkout-input" type="emailAddress" name="email" placeholder="Entrez votre email">
+
+    
+
+            <button type="submit" class="alpha-button"> <svg class="alpha-button--icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Check</button>
+        </form>
+
+
+
+    </div>
+</section>
