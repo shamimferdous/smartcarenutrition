@@ -2,11 +2,11 @@
 <nav class="navbar">
     <a href="/"><img class="navbar__logo" src="/img/logo-white.png" alt="Smart Care Logo"></a>
     <ul class="navbar__list">
-        <li class="navbar__list--item"> <a href="/alpha-whey">Whey</a> </li>
+        <li class="navbar__list--item"> <a href="/politica-de-cookies">Whey</a> </li>
         <li class="navbar__list--item"> <a href="/alpha-amino">Amino</a> </li>
         <li class="navbar__list--item"> <a href="/alpha-push">Push</a> </li>
         <li class="navbar__list--item"> <a href="/alpha-crea">Crea</a> </li>
-        {{#if cart}} <li class="navbar__list--item checkout-active"> <a href="/checkout">Checkout</a> </li> {{/if}}
+        {{!-- {{#if cart}} <li class="navbar__list--item checkout-active"> <a href="/checkout">Checkout</a> </li> {{/if}} --}}
     </ul>
     <a href="/my-orders">
         <div class="navbar__user">
@@ -15,7 +15,7 @@
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
         </svg>
-        <span class="navbar__user--text"> My Orders </span>
+        <span class="navbar__user--text"> Mis pedidos </span>
     </div>
     </a>
 </nav>
@@ -67,7 +67,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <h1 class="cart__header--text">Your Cart</h1>
+                            <h1 class="cart__header--text">Mi carrito</h1>
                         </div>
 
                         <a class="cart__header__close-button" onclick="closeCart()"><svg class="cart__header--icon--2"
@@ -115,7 +115,7 @@
 
                         <a href="/checkout">
                             <div class="cart__footer__checkout">
-                            <span class="cart__footer__checkout--first-text">Proceed to Checkout</span>
+                            <span class="cart__footer__checkout--first-text">Confirmar pedido</span>
                             <!-- <span class="cart__footer__checkout--second-text">$105</span> -->
                         </div>
                         </a>

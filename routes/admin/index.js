@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Order = require('../../models/Order');
+const Coupon = require('../../models/Coupon');
 
 //router all
 router.all('/*', (req, res, next) => {
@@ -64,10 +65,46 @@ router.put('/order-status-update', (req, res)=>{
             res.redirect('/admin/orders');
         });
     });
+});
 
+
+//coupons get route
+router.get('/coupons', (req, res)=>{
+
+    Coupon.find({}).sort({_id: -1}).lean().then(coupons=>{
+        res.render('admin/coupons', { coupons: coupons });
+    })
 
 });
 
+
+//create coupon post route
+router.post('/create-coupon', (req, res)=>{
+
+    console.log(req.body);
+
+    const newCoupon = new Coupon({
+        couponCode: req.body.couponCode,
+        couponValue: req.body.couponValue
+
+    });
+
+    newCoupon.save().then(savedCoupon=>{
+        res.redirect('/admin/coupons');
+    })
+});
+
+
+//coupon delete route
+router.delete('/coupon-delete', (req, res)=>{
+
+    console.log(req.body.couponID);
+
+    Coupon.findOneAndDelete({_id: req.body.couponID}).then(deletedCoupon=>{
+        res.redirect('/admin/coupons');
+    });
+
+});
 /*>> Creating Routes */
 
 

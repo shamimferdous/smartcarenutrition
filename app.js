@@ -97,8 +97,8 @@ app.use(express.static(path.join(__dirname, 'public'))); //Static File
 //const {select, generateTime, each_upto} = require('./helpers/handlebars-helpers'); //Also need to add it to the app.engine exphbs
 /*<< Helper Functions*/
 
-const {select, generateTime, each_upto, paginate, cartLength, cartTotal} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', expressHandlebars({defaultLayout: 'home', helpers: {select: select, generateTime: generateTime, each_upto: each_upto, paginate: paginate, cartLength: cartLength, cartTotal: cartTotal}}));
+const {select, generateTime, each_upto, paginate, cartLength, cartTotal, cartTotalCheckout} = require('./helpers/handlebars-helpers');
+app.engine('handlebars', expressHandlebars({defaultLayout: 'home', helpers: {select: select, generateTime: generateTime, each_upto: each_upto, paginate: paginate, cartLength: cartLength, cartTotal: cartTotal, cartTotalCheckout: cartTotalCheckout}}));
 app.set('view engine', 'handlebars');
 
 /*<< Setting View Enginers -- Handlebars*/

@@ -6,18 +6,18 @@
 
             <form id="checkout-form" class="checkout-form" action="/pay" method="POST">
 
-                <label class="checkout-label">Full Name * :</label>
+                <label class="checkout-label">Nombre completo * :</label>
                 <input required class="checkout-input" type="text" name="customerName" placeholder="Ingrese su nombre">
 
-                <label class="checkout-label">Email Address * :</label>
-                <input required class="checkout-input" type="text" name="emailAddress"
+                <label class="checkout-label">Correo electrónico * :</label>
+                <input required class="checkout-input" type="email" name="emailAddress"
                     placeholder="Introduzca la dirección de correo electrónico">
 
-                <label class="checkout-label">Cell Number * :</label>
+                <label class="checkout-label">Numero de celular * :</label>
                 <input minlength="11" maxlength="11" class="checkout-input" type="text" name="cellNumber"
                     placeholder="Ingrese el número de celda">
 
-                <label class="checkout-label">Shipping Country * :</label>
+                <label class="checkout-label">País de envío * :</label>
                 <select class="checkout-select" name="shippingCountry" id="">
                     <option value="Spain">Spain</option>
                     <option value="GB">United Kingdom</option>
@@ -70,15 +70,15 @@
                     <option value="TR">Turkey</option>
                 </select>
 
-                <label class="checkout-label">Shipping City * :</label>
+                <label class="checkout-label">Ciudad de envío * :</label>
                 <input required class="checkout-input" type="text" name="shippingCity" placeholder="Entrar ciudad">
                 
 
-                <label class="checkout-label">Shipping ZIP Code * :</label>
+                <label class="checkout-label">Código postal * :</label>
                 <input required class="checkout-input" type="number" name="shippingZIP" placeholder="Ingresa tu código postal">
 
 
-                <label class="checkout-label">Shipping Address Details* :</label>
+                <label class="checkout-label">Detalles de la dirección de envío * :</label>
                 <textarea required class="checkout-input" name="shippingAddress" cols="30" rows="3"
                     placeholder="Ingrese a la calle, apartamento, etc."></textarea>
 
@@ -102,12 +102,23 @@
                                 {{productQuantity}} x {{productPrice}}€ </span> <span class="align-left">
                                 <script>document.write({{ productPrice }} * {{ productQuantity }})</script>€</span> </td>
                         {{/each}}
+                        <td class="twin"> <span class="align-left"></span> <span class="align-left">Discount:</span> <span
+                                class="align-left">{{discount}}%</span> </td>
                         <td class="twin"> <span class="align-left"></span> <span class="align-left">Total:</span> <span
-                                class="align-left">{{#cartTotal cart}} {{/cartTotal}}€</span> </td>
+                                class="align-left">{{#cartTotalCheckout cart discount}} {{/cartTotalCheckout}}€</span> </td>
 
                     </tr>
                 </tbody>
             </table>
+
+            <div class="coupon-box">
+                <form id="coupon" style="width: 60%;" action="/coupon" method="POST">  
+                <input name="couponCode" style="width: 100%; margin-bottom: 1rem;" placeholder="Código promocional" class="checkout-input" type="text" name="" required>
+                </form>
+
+                <button type="submit" style="curson: pointer;" form="coupon" class="coupon-button">Canjear código</button>
+            </div>
+            <p style="font-size: 1.3rem;">*Si tiene un cupón, canjéelo primero antes de completar otros detalles de pago</p>
 
         </div>
 

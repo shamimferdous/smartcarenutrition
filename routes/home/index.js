@@ -3,11 +3,14 @@ const router = express.Router();
 const Product = require('../../models/Product');
 const Order = require('../../models/Order');
 const User = require('../../models/User');
+const Coupon = require('../../models/Coupon');
 const paypal = require('paypal-rest-sdk');
 const { cartTotal } = require('../../helpers/checkout-helper');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
+const xss = require('xss');
 
 
 paypal.configure({
@@ -60,6 +63,30 @@ router.get('/alpha-crea', (req, res) => {
 });
 
 
+//politica-de-cookies get route
+router.get('/politica-de-cookies', (req, res)=>{
+    res.render('home/politica-de-cookies');
+});
+
+
+//privacidad get route
+router.get('/privacidad', (req, res)=>{
+    res.render('home/privacidad');
+});
+
+
+//contacto get route
+router.get('/contacto', (req, res)=>{
+    res.render('home/contacto');
+});
+
+
+//aviso-legal get route
+router.get('/aviso-legal', (req, res)=>{
+    res.render('home/aviso-legal');
+});
+
+
 //quantity checkout get route
 router.get('/checkout-quantity/:productName', (req, res) => {
 
@@ -108,6 +135,7 @@ router.post('/add-to-cart', (req, res) => {
         req.session.count = 'Shamim Bhai';
         req.session.cart = [];
         req.session.cart.push({ ...req.body });
+        req.session.discount = 0;
 
         console.log(req.session.cart);
         console.log('Cart Null Positive');
@@ -151,10 +179,24 @@ router.get('/checkout', (req, res) => {
     if (!req.session.cart) {
         res.redirect('/');
     } else {
-        res.render('home/checkout', { cart: req.session.cart });
+        res.render('home/checkout', { cart: req.session.cart , discount: req.session.discount });
     }
 
 });
+
+
+
+//coupon post route
+router.post('/coupon', (req, res)=>{
+
+    console.log(req.body.couponCode);
+    
+    Coupon.findOne({couponCode: req.body.couponCode}).lean().then(coupon=>{
+        req.session.discount = coupon.couponValue;
+        res.redirect('/checkout');
+    });
+});
+
 
 
 
@@ -162,10 +204,18 @@ router.get('/checkout', (req, res) => {
 router.post('/pay', (req, res) => {
     console.log(`Payment api Hit`);
 
-    console.log(req.body);
+
+    
+    // req.session.checkoutData.customerName = xss(req.body.customerName);
+    // req.session.checkoutData.emailAddress = xss(req.body.emailAddress);
+    // req.session.checkoutData.cellNumber = xss(req.body.cellNumber);
+    // req.session.checkoutData.shippingCountry = xss(req.body.shippingCountry);
+    // req.session.checkoutData.shippingCity = xss(req.body.shippingCity);   
+    // req.session.checkoutData.shippingZIP = xss(req.body.shippingZIP);
+    // req.session.checkoutData.shippingAddress = xss(req.body.shippingAddress);
 
     req.session.checkoutData = req.body;
-
+    console.log(req.session.checkoutData);
 
     const create_payment_json = {
         "intent": "sale",
@@ -173,22 +223,22 @@ router.post('/pay', (req, res) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://smartcarenutrition.herokuapp.com/success", //http://smartcarenutrition.herokuapp.com/success
-            "cancel_url": "http://smartcarenutrition.herokuapp.com/#products"
+            "return_url": "https://www.smartcarenutrition.es/success", //https://www.smartcarenutrition.es/success
+            "cancel_url": "https://www.smartcarenutrition.es/products"
         },
         "transactions": [{
             "item_list": {
                 "items": [{
                     "name": "Alpha Products",
                     "sku": "6969",
-                    "price": cartTotal(req.session.cart),
+                    "price": cartTotal(req.session.cart, req.session.discount),
                     "currency": "EUR",
                     "quantity": 1
                 }]
             },
             "amount": {
                 "currency": "EUR",
-                "total": cartTotal(req.session.cart)
+                "total": cartTotal(req.session.cart, req.session.discount)
             },
             "description": "Paying to Smart Care Neutration"
         }]
@@ -223,7 +273,7 @@ router.get('/success', (req, res) => {
         "transactions": [{
             "amount": {
                 "currency": "EUR",
-                "total": cartTotal(req.session.cart)
+                "total": cartTotal(req.session.cart, req.session.discount)
             }
         }]
     };
@@ -238,7 +288,7 @@ router.get('/success', (req, res) => {
 
             //order id
             let str = 'S' + Date.now();
-            let theOrderID = 'SCN' + str.slice(5) + Math.random().toString().slice(2, 5);
+            let theOrderID = 'SCN' + str.slice(8) + Math.random().toString().slice(2, 4);
             console.log(theOrderID);
 
             // //creating new user if user doesn't exist
@@ -278,12 +328,12 @@ router.get('/success', (req, res) => {
 
                 cart: req.session.cart,
                 orderID: theOrderID,
-                customerName: req.session.checkoutData.customerName,
-                customerEmail: req.session.checkoutData.emailAddress,
-                customerCell: req.session.checkoutData.cellNumber,
-                shippingAddress: `Country: ${req.session.checkoutData.shippingCountry}, City: ${req.session.checkoutData.shippingCity}, Zip Code: ${req.session.checkoutData.shippingZIP}, Address: ${req.session.checkoutData.shippingAddress}`,
+                customerName: xss(req.session.checkoutData.customerName),
+                customerEmail: xss(req.session.checkoutData.emailAddress),
+                customerCell: xss(req.session.checkoutData.cellNumber),
+                shippingAddress: `Country: ${xss(req.session.checkoutData.shippingCountry)}, City: ${xss(req.session.checkoutData.shippingCity)}, Zip Code: ${xss(req.session.checkoutData.shippingZIP)}, Address: ${xss(req.session.checkoutData.shippingAddress)}`,
                 date: Date.now(),
-                total: cartTotal(req.session.cart),
+                total: cartTotal(req.session.cart, req.session.discount),
                 paypalPayID: payment.id,
                 orderStatus: 'Paid & Received'
 
@@ -353,7 +403,7 @@ router.get('/my-orders', (req, res) => {
 //user dashboard get route
 router.post('/user-dashboard', (req, res) => {
 
-    Order.find({ customerEmail: req.body.email }).lean().sort({ _id: -1 }).then(orders => {
+    Order.find({ customerEmail: xss(req.body.email) }).lean().sort({ _id: -1 }).then(orders => {
         if (orders.length === 0) {
             console.log('Empty');
             req.flash('error_message', `Incorrect Email Address. Please Recheck and Submit Again!`);
