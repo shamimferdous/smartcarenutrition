@@ -703,6 +703,79 @@ button:focus {
   font-family: 'Industry-Book', sans-serif;
   cursor: pointer; }
 
+.body-paragraph {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 3rem; }
+
+.bp {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 3rem; }
+
+.body-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem; }
+
+.p-wrap {
+  display: flex; }
+
+.contact-button {
+  width: 100%;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  padding: 1rem;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer; }
+
+.alert {
+  background-color: var(--color-primary);
+  color: #000;
+  font-size: 1.6rem;
+  padding: 1.5rem;
+  margin-top: .5rem;
+  margin-bottom: 3rem; }
+
+.cookie-notice {
+  position: fixed;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-black);
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-primary);
+  z-index: 69000;
+  transition: all .5s; }
+  .cookie-notice__body {
+    flex: 0 0 80%;
+    font-size: 1.3rem; }
+  .cookie-notice__button {
+    flex: 0 0 10%;
+    padding: 1rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    cursor: pointer; }
+
+.cookie-notice-closed {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-black);
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-primary);
+  z-index: 69000;
+  transition: all .5s; }
+
 .header {
   height: 97vh;
   background-image: linear-gradient(to right bottom, #141414, rgba(0, 0, 0, 0.8)), url(../img/HERO.jpg);

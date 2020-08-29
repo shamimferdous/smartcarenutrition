@@ -7,10 +7,10 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
-const {mongoDBUrl} = require('./config/database');
+const { mongoDBUrl } = require('./config/database');
 const passport = require('passport');
 const compression = require('compression');
-
+const ssl = require('express-sslify');
 
 
 /*>> Creating Database */
@@ -22,6 +22,11 @@ mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).
 }).catch(error=> console.log(error));
 /*<< Creating Database */
 
+
+
+/*>> Force SSL */
+app.use(ssl.HTTPS({ trustProtoHeader: true }));
+/*<< Force SSL */
 
 
 

@@ -14,19 +14,19 @@ const UserSchema = new Schema({
 
     email: {
         type: String,
-        require: true
+        required: true
     },
 
 
     role: {
         type: String,
         enum: ['31435', '31469'],
-        require: true
+        required: true
     },
 
     password: {
         type: String,
-        require: true
+        required: true
     },
 
     orders: [{

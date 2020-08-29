@@ -46,9 +46,9 @@ function shamimBhaiSayHi() {
 let count = 0;
 function sidebarTriggerDesktop() {
 
-     console.log('Desktop Toogle Triggered');
+    console.log('Desktop Toogle Triggered');
 
-    if(count % 2 == 0) {
+    if (count % 2 == 0) {
         document.getElementById("sidebar").className = "sidebar-off";
         document.getElementById("main-contents").className = "main-contents-off";
     } else {
@@ -65,9 +65,9 @@ function sidebarTriggerDesktop() {
 let countMobile = 0;
 function sidebarTriggerMobile() {
 
-     console.log('Mobile Toogle Triggered');
+    console.log('Mobile Toogle Triggered');
 
-    if(countMobile % 2 == 0) {
+    if (countMobile % 2 == 0) {
         document.getElementById("sidebar").className = "sidebar-mobile";
         //document.getElementById("main-contents").className = "main-contents-off";
     } else {
@@ -82,7 +82,7 @@ function sidebarTriggerMobile() {
 //defining openMobileSearch
 function openMobileSearch() {
     console.log('openMobileSearch Triggered');
-    
+
     document.getElementById("search-mobile").className = "search-mobile";
 }
 
@@ -92,4 +92,27 @@ function closeMobileSearch() {
     console.log('closeMobileSearch Triggered');
 
     document.getElementById("search-mobile").className = "search-mobile-closed";
+}
+
+
+
+
+//cookie warning
+window.onload = function () {
+    setTimeout(() => {
+
+        let read = localStorage.getItem('cookie-notice');
+
+        if (JSON.parse(localStorage.getItem('cookie-warning')) === 'Done') {
+            console.log(`Already Warned`);
+        } else {
+            document.getElementById("cookie-notice").className = "cookie-notice";
+            localStorage.setItem('cookie-warning', JSON.stringify('Done'));
+        }
+    }, 2000);
+}
+
+//defining closecookie warning
+const closeCookieWarning = () => {
+    document.getElementById("cookie-notice").className = "cookie-notice-closed";
 }

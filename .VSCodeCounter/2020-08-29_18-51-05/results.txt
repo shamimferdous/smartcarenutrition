@@ -1,0 +1,99 @@
+Date : 2020-08-29 18:51:05
+Directory : c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1
+Total : 52 files,  8355 codes, 274 comments, 1388 blanks, all 10017 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      3,002 |          0 |          2 |      3,004 |
+| SCSS       |          6 |      1,625 |         52 |        454 |      2,131 |
+| Handlebars |         26 |      1,501 |         29 |        341 |      1,871 |
+| CSS        |          3 |      1,498 |          4 |        130 |      1,632 |
+| JavaScript |         14 |        729 |        189 |        460 |      1,378 |
+| Ini        |          1 |          0 |          0 |          1 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                               | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                  |         52 |      8,355 |        274 |      1,388 |     10,017 |
+| config                                                                                                                             |          2 |         32 |         23 |         13 |         68 |
+| helpers                                                                                                                            |          4 |        214 |         25 |        113 |        352 |
+| models                                                                                                                             |          4 |         99 |         15 |         50 |        164 |
+| public                                                                                                                             |         10 |      3,176 |         69 |        613 |      3,858 |
+| public\admin-css                                                                                                                   |          1 |          9 |          0 |          1 |         10 |
+| public\css                                                                                                                         |          2 |      1,489 |          4 |        129 |      1,622 |
+| public\js                                                                                                                          |          1 |         53 |         13 |         29 |         95 |
+| public\sass                                                                                                                        |          6 |      1,625 |         52 |        454 |      2,131 |
+| routes                                                                                                                             |          2 |        277 |         91 |        167 |        535 |
+| routes\admin                                                                                                                       |          1 |         53 |         22 |         37 |        112 |
+| routes\home                                                                                                                        |          1 |        224 |         69 |        130 |        423 |
+| views                                                                                                                              |         26 |      1,501 |         29 |        341 |      1,871 |
+| views\admin                                                                                                                        |          4 |        243 |         13 |         35 |        291 |
+| views\home                                                                                                                         |         15 |      1,000 |         11 |        220 |      1,231 |
+| views\layouts                                                                                                                      |          2 |         78 |          0 |         36 |        114 |
+| views\partials                                                                                                                     |          5 |        180 |          5 |         50 |        235 |
+| views\partials\admin                                                                                                               |          2 |         56 |          1 |          7 |         64 |
+| views\partials\home                                                                                                                |          3 |        124 |          4 |         43 |        171 |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                           | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\app.js                                        | JavaScript |         54 |         22 |         88 |        164 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\config\database.js                            | JavaScript |          3 |          1 |          1 |          5 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\config\passport.js                            | JavaScript |         29 |         22 |         12 |         63 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\desktop.ini                                   | Ini        |          0 |          0 |          1 |          1 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\helpers\authentication.js                     | JavaScript |          8 |          0 |          3 |         11 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\helpers\checkout-helper.js                    | JavaScript |         10 |          0 |          5 |         15 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\helpers\code-stock.js                         | JavaScript |        133 |         21 |         67 |        221 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\helpers\handlebars-helpers.js                 | JavaScript |         63 |          4 |         38 |        105 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\models\Coupon.js                              | JavaScript |         13 |          0 |          5 |         18 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\models\Order.js                               | JavaScript |         38 |          0 |         12 |         50 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\models\Product.js                             | JavaScript |         14 |          0 |          5 |         19 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\models\User.js                                | JavaScript |         34 |         15 |         28 |         77 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\package-lock.json                             | JSON       |      2,962 |          0 |          1 |      2,963 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\package.json                                  | JSON       |         40 |          0 |          1 |         41 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\admin-css\custom.css                   | CSS        |          9 |          0 |          1 |         10 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\css\bootstrap.css                      | CSS        |        131 |          0 |         32 |        163 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\css\style.css                          | CSS        |      1,358 |          4 |         97 |      1,459 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\js\main.js                             | JavaScript |         53 |         13 |         29 |         95 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\_base.scss                        | SCSS       |        101 |          9 |         44 |        154 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\_button_typogrphy.scss            | SCSS       |        708 |         20 |        189 |        917 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\_components.scss                  | SCSS       |        433 |          9 |        107 |        549 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\_layouts.scss                     | SCSS       |        315 |         13 |         95 |        423 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\_tables.scss                      | SCSS       |         63 |          1 |         19 |         83 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\public\sass\main.scss                         | SCSS       |          5 |          0 |          0 |          5 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\routes\admin\index.js                         | JavaScript |         53 |         22 |         37 |        112 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\routes\home\index.js                          | JavaScript |        224 |         69 |        130 |        423 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\admin\coupons.handlebars                | Handlebars |         60 |          0 |          9 |         69 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\admin\index.handlebars                  | Handlebars |         52 |         13 |          2 |         67 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\admin\order-details.handlebars          | Handlebars |         65 |          0 |         13 |         78 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\admin\orders.handlebars                 | Handlebars |         66 |          0 |         11 |         77 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\alpha-amino.handlebars             | Handlebars |        122 |          0 |         26 |        148 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\alpha-crea.handlebars              | Handlebars |        118 |          0 |         22 |        140 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\alpha-push.handlebars              | Handlebars |        118 |          0 |         21 |        139 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\alpha-whey.handlebars              | Handlebars |        149 |          0 |         22 |        171 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\aviso-legal.handlebars             | Handlebars |          7 |          0 |          1 |          8 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\checkout-quantity.handlebars       | Handlebars |         38 |          9 |         10 |         57 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\checkout.handlebars                | Handlebars |        113 |          2 |         19 |        134 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\contacto.handlebars                | Handlebars |          7 |          0 |          1 |          8 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\landing.handlebars                 | Handlebars |        104 |          0 |         44 |        148 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\login.handlebars                   | Handlebars |         15 |          0 |         12 |         27 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\my-orders.handlebars               | Handlebars |         14 |          0 |         11 |         25 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\politica-de-cookies.handlebars     | Handlebars |        147 |          0 |          7 |        154 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\privacidad.handlebars              | Handlebars |          8 |          0 |          2 |         10 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\success.handlebars                 | Handlebars |         10 |          0 |         10 |         20 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\home\user-dashboard.handlebars          | Handlebars |         30 |          0 |         12 |         42 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\layouts\admin.handlebars                | Handlebars |         45 |          0 |         17 |         62 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\layouts\home.handlebars                 | Handlebars |         33 |          0 |         19 |         52 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\partials\admin\admin-sidenav.handlebars | Handlebars |         48 |          1 |          6 |         55 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\partials\admin\footer.handlebars        | Handlebars |          8 |          0 |          1 |          9 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\partials\home\footer.handlebars         | Handlebars |         17 |          1 |          0 |         18 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\partials\home\form-msgs.handlebars      | Handlebars |         11 |          0 |         15 |         26 |
+| c:\Users\B A T  M A C H I N E\Dropbox\The Alpha Project\Smart_Care_Neutration_v2.0.1\views\partials\home\home-nav.handlebars       | Handlebars |         96 |          3 |         28 |        127 |
+| Total                                                                                                                              |            |      8,355 |        274 |      1,388 |     10,017 |
++------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

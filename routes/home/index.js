@@ -4,6 +4,7 @@ const Product = require('../../models/Product');
 const Order = require('../../models/Order');
 const User = require('../../models/User');
 const Coupon = require('../../models/Coupon');
+const Contact = require('../../models/Contact');
 const paypal = require('paypal-rest-sdk');
 const { cartTotal } = require('../../helpers/checkout-helper');
 const bcrypt = require('bcryptjs');
@@ -414,6 +415,24 @@ router.post('/user-dashboard', (req, res) => {
     });
 
 });
+
+
+
+//contact post route
+router.post('/contact', (req, res)=>{
+    
+    const newContact = new Contact({
+        email: req.body.email,
+        affair: req.body.affair,
+        description: req.body.description,
+        date: Date.now()
+    });
+
+    newContact.save().then(contact=>{
+         res.render('home/contacto', {success: true});
+    });
+
+})
 
 
 /*>> Creating Routes */

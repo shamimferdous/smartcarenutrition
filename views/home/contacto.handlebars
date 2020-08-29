@@ -1,7 +1,29 @@
-<!-- Checkout Quantity Section -->
+<!-- Contact Section-->
 <section style="padding: 20rem 10rem;" class="checkout-container">
     <div class="checkout-box">
-        <h2 class="checkout-h2">SERVICIO AL CLIENTE</h2>
-        <p>Contents Here</p>
+        <h2 class="checkout-h2">Enviar una solicitud</h2>
+
+        {{#if success}}
+        <div class="alert" role="alert">
+            ¡Tu concierto se envió correctamente! Recibirá un correo de nuestra parte pronto
+        </div>
+        {{/if}}
+
+        <form style="width: 100%;" class="checkout-form" action="/contact" method="POST">
+
+            <label class="checkout-label">Correo electrónico * :</label>
+            <input style="width: 100%;" required class="checkout-input" type="email" name="email"
+                placeholder="EG. johndoe@gmail.com">
+
+            <label class="checkout-label">Asunto * :</label>
+            <input style="width: 100%;" required class="checkout-input" type="text" name="affair"
+                placeholder="Por favor escriba su asunto aquí">
+
+            <textarea style="width: 100%;" class="checkout-input" placeholder="Describe tu preocupación aquí"
+                name="description" id="" cols="30" rows="10"></textarea>
+
+            <button class="contact-button" type="submit">Enviar</button>
+
+        </form>
     </div>
 </section>

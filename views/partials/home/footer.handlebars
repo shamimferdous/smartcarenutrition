@@ -1,18 +1,32 @@
 <!-- Footer Section -->
-    <footer class="footer">
-        <div class="footer__logo-box">
-            <img class="footer__logo-box__logo" src="/img/logo-white.png" alt="Smart Care Logo">
+<footer class="footer">
+    <div class="footer__logo-box">
+        <img class="footer__logo-box__logo" src="/img/logo-white.png" alt="Smart Care Logo">
+    </div>
+    <div class="footer__box">
+        <ul class="footer__box__menu">
+            <li class="footer__box__menu--item"> <a href="/politica-de-cookies">Politica De Cookies</a></li>
+            <li class="footer__box__menu--item"> <a href="/privacidad">Privacydad</a></li>
+            <li class="footer__box__menu--item"> <a href="/contacto">Contacto</a></li>
+            {{!-- <li class="footer__box__menu--item"> <a href="/aviso-legal">Aviso Legal</a></li> --}}
+            {{!-- <li class="footer__box__menu--item"> <a href="/my-orders">My Orders</a></li> --}}
+        </ul>
+        <div class="footer__box__about">
+            <p style="font-size: 1.5rem;" class="footer__box__about--paragraph">©️
+                <script>document.write(new Date().getFullYear());</script> All Rights Reserved. Please mail us at
+                info@smartcareneutration.se for any information.</p>
         </div>
-        <div class="footer__box">
-            <ul class="footer__box__menu">
-                <li class="footer__box__menu--item"> <a href="/politica-de-cookies">Politica De Cookies</a></li>
-                <li class="footer__box__menu--item"> <a href="/privacidad">Privacydad</a></li>
-                <li class="footer__box__menu--item"> <a href="/contacto">Contacto</a></li>
-                <li class="footer__box__menu--item"> <a href="/aviso-legal">Aviso Legal</a></li>
-                {{!-- <li class="footer__box__menu--item"> <a href="/my-orders">My Orders</a></li> --}}
-            </ul>
-            <div class="footer__box__about">
-                <p style="font-size: 1.5rem;" class="footer__box__about--paragraph">©️ <script>document.write(new Date().getFullYear());</script> All Rights Reserved. Please mail us at info@smartcareneutration.se for any information.</p>
-            </div>
-        </div>
-    </footer>
+    </div>
+
+
+    {{!-- Cookie Notice --}}
+    <div id="cookie-notice" class="cookie-notice-closed">
+        <p class="cookie-notice__body">
+            Este sitio web utiliza cookies para mejorar la experiencia de navegación del usuario, así como para fines
+            estadísticos. Al visitar nuestro sitio web, consideramos que acepta su uso. Para obtener más información
+            sobre el uso de cookies o cómo gestionarlas o eliminarlas en este dispositivo, haga clic aquí.
+        </p>
+        <button onclick="closeCookieWarning()" class="cookie-notice__button">Aceptar</button>
+    </div>
+</footer>
+
