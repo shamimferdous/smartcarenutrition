@@ -15,9 +15,9 @@ const xss = require('xss');
 
 
 paypal.configure({
-    'mode': 'sandbox', //sandbox or live
-    'client_id': 'AXwmaYYHarZ_vdotITtoSFV2WLAKLHtiUXJE9S9GQfGZLrGpUfyVrkiXU8SPUKHi8EYZHUOyN-AA9xUS',
-    'client_secret': 'EPHwxJR_QdQR_FtGVYMKqxK9LoQ6T5qotlbtFjZ6NnqGPQ0mYiSGhKZrGU5Akh1qYc_qcTS-KhwjYUJH'
+    'mode': 'live', //sandbox or live
+    'client_id': 'AYCTSu7lAsOD9pCln1AveyMpLsXHDOrJRipOqA4beX7DJ7pSDD212225i0d0EPQcRR-kSdMTm5vn45KG',
+    'client_secret': 'EGNKEsq-oFIUawWK32AZQIoLkqOnO5p43lkdqsfRdXrzKXtu5ogw22gpa1AeetcLS-nWyDF8yiKa-T32'
 });
 
 
@@ -225,7 +225,7 @@ router.post('/pay', (req, res) => {
         },
         "redirect_urls": {
             "return_url": "https://www.smartcarenutrition.es/success", //https://www.smartcarenutrition.es/success
-            "cancel_url": "https://www.smartcarenutrition.es/products"
+            "cancel_url": "https://www.smartcarenutrition.es/#products"
         },
         "transactions": [{
             "item_list": {
