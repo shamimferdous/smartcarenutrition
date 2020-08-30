@@ -25,7 +25,7 @@ mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).
 
 
 /*>> Force SSL */
-//app.use(ssl.HTTPS({ trustProtoHeader: true }));
+app.use(ssl.HTTPS({ trustProtoHeader: true }));
 /*<< Force SSL */
 
 
