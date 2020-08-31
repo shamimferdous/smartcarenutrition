@@ -12,12 +12,20 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const xss = require('xss');
+const rateLimit = require("express-rate-limit");
+//limiting login attempts per day
+const requestLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour window
+    max: 5, // start blocking after 5 requests
+    message:
+      "Too many requests! Sorry"
+  });
 
 
 paypal.configure({
     'mode': 'live', //sandbox or live
-    'client_id': 'AYCTSu7lAsOD9pCln1AveyMpLsXHDOrJRipOqA4beX7DJ7pSDD212225i0d0EPQcRR-kSdMTm5vn45KG',
-    'client_secret': 'EGNKEsq-oFIUawWK32AZQIoLkqOnO5p43lkdqsfRdXrzKXtu5ogw22gpa1AeetcLS-nWyDF8yiKa-T32'
+    'client_id': process.env.client_id,
+    'client_secret': process.env.client_secret
 });
 
 
@@ -369,7 +377,7 @@ router.get('/success-message/:paypalPayID/:orderID', (req, res) => {
 
 
 //login page get route
-router.get('/log-IN', (req, res) => {
+router.get('/log-IN', requestLimiter, (req, res) => {
 
     res.render('home/login');
 
@@ -377,7 +385,7 @@ router.get('/log-IN', (req, res) => {
 
 
 //login post route
-router.post('/loginNOW', passport.authenticate('local-login', {
+router.post('/loginNOW', requestLimiter, passport.authenticate('local-login', {
     failureRedirect: '/log-IN',
     failureFlash: true
 }), (req, res, next) => {

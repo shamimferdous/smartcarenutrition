@@ -12,7 +12,7 @@ const passport = require('passport');
 const compression = require('compression');
 const ssl = require('express-sslify');
 
-
+require('dotenv').config();
 /*>> Creating Database */
 mongoose.set('useCreateIndex', true); //Solution of "collection.ensureindex is deprecated mongoose" warning
 mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).then((db)=>{
@@ -24,20 +24,23 @@ mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).
 
 
 
-/*>> Force SSL */
-app.use(ssl.HTTPS({ trustProtoHeader: true }));
+/*>> Force SSL & DOTENV */
+//app.use(ssl.HTTPS({ trustProtoHeader: true }));
 /*<< Force SSL */
 
 
 
-
+console.log(process.env.cookie_secret);
 
 /*>> Session and flash */
 app.use(session({
 
-    secret: 'shamimferdosbatmanhasnolimits',
+    secret: process.env.cookie_secret,
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 3600000 * 10
+    }
 
 }));
 
@@ -160,7 +163,7 @@ app.get('*', function(req, res){
 
 
 
-const port = process.env.PORT || 6900;
+const port = process.env.PORT || 7900;
 
 app.listen(port, ()=>{
 
