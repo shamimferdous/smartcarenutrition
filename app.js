@@ -12,7 +12,7 @@ const passport = require('passport');
 const compression = require('compression');
 const ssl = require('express-sslify');
 
-require('dotenv').config();
+//require('dotenv').config();
 /*>> Creating Database */
 mongoose.set('useCreateIndex', true); //Solution of "collection.ensureindex is deprecated mongoose" warning
 mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).then((db)=>{
