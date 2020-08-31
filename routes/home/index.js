@@ -18,8 +18,8 @@ const requestLimiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour window
     max: 5, // start blocking after 5 requests
     message:
-      "Too many requests! Sorry"
-  });
+        "Too many requests! Sorry"
+});
 
 
 paypal.configure({
@@ -45,6 +45,7 @@ router.all('/*', (req, res, next) => {
 router.get('/', (req, res) => {
 
     res.render('home/landing', { cart: req.session.cart });
+
 });
 
 
@@ -73,25 +74,25 @@ router.get('/alpha-crea', (req, res) => {
 
 
 //politica-de-cookies get route
-router.get('/politica-de-cookies', (req, res)=>{
+router.get('/politica-de-cookies', (req, res) => {
     res.render('home/politica-de-cookies');
 });
 
 
 //privacidad get route
-router.get('/privacidad', (req, res)=>{
+router.get('/privacidad', (req, res) => {
     res.render('home/privacidad');
 });
 
 
 //contacto get route
-router.get('/contacto', (req, res)=>{
+router.get('/contacto', (req, res) => {
     res.render('home/contacto');
 });
 
 
 //aviso-legal get route
-router.get('/aviso-legal', (req, res)=>{
+router.get('/aviso-legal', (req, res) => {
     res.render('home/aviso-legal');
 });
 
@@ -110,30 +111,30 @@ router.get('/checkout-quantity/:productName', (req, res) => {
 });
 
 
-//database ping route
-router.get('/database-ping', (req, res) => {
- 
-        const newUser = new User({
+// //database ping route
+// router.get('/database-ping', (req, res) => {
 
-            fullName: 'Alpha Admin',
-            email: 'admin@smartcarenutrition.es',
-            //cellNumber: req.session.checkoutData.cellNumber,
-            role: '31469',
-            password: 'alphaAdmin2441139'
-        });
+//         const newUser = new User({
 
-        //securing the password
-        bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newUser.password, salt, (err, hash) => {
+//             fullName: 'Alpha Admin',
+//             email: 'admin@smartcarenutrition.es',
+//             //cellNumber: req.session.checkoutData.cellNumber,
+//             role: '31469',
+//             password: 'alphaAdmin2441139'
+//         });
 
-                newUser.password = hash;
+//         //securing the password
+//         bcrypt.genSalt(10, (err, salt) => {
+//             bcrypt.hash(newUser.password, salt, (err, hash) => {
 
-                newUser.save();
+//                 newUser.password = hash;
 
-            });
-        });
+//                 newUser.save();
 
-});
+//             });
+//         });
+
+// });
 
 
 
@@ -188,7 +189,7 @@ router.get('/checkout', (req, res) => {
     if (!req.session.cart) {
         res.redirect('/');
     } else {
-        res.render('home/checkout', { cart: req.session.cart , discount: req.session.discount });
+        res.render('home/checkout', { cart: req.session.cart, discount: req.session.discount });
     }
 
 });
@@ -196,11 +197,11 @@ router.get('/checkout', (req, res) => {
 
 
 //coupon post route
-router.post('/coupon', (req, res)=>{
+router.post('/coupon', (req, res) => {
 
     console.log(req.body.couponCode);
-    
-    Coupon.findOne({couponCode: req.body.couponCode}).lean().then(coupon=>{
+
+    Coupon.findOne({ couponCode: req.body.couponCode }).lean().then(coupon => {
         req.session.discount = coupon.couponValue;
         res.redirect('/checkout');
     });
@@ -214,7 +215,7 @@ router.post('/pay', (req, res) => {
     console.log(`Payment api Hit`);
 
 
-    
+
     // req.session.checkoutData.customerName = xss(req.body.customerName);
     // req.session.checkoutData.emailAddress = xss(req.body.emailAddress);
     // req.session.checkoutData.cellNumber = xss(req.body.cellNumber);
@@ -427,8 +428,8 @@ router.post('/user-dashboard', (req, res) => {
 
 
 //contact post route
-router.post('/contact', (req, res)=>{
-    
+router.post('/contact', (req, res) => {
+
     const newContact = new Contact({
         email: req.body.email,
         affair: req.body.affair,
@@ -436,8 +437,8 @@ router.post('/contact', (req, res)=>{
         date: Date.now()
     });
 
-    newContact.save().then(contact=>{
-         res.render('home/contacto', {success: true});
+    newContact.save().then(contact => {
+        res.render('home/contacto', { success: true });
     });
 
 })
