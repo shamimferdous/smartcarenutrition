@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path'); //Static file
-const expressHandlebars = require('express-handlebars'); 
+const expressHandlebars = require('express-handlebars');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -12,14 +12,14 @@ const passport = require('passport');
 const compression = require('compression');
 const ssl = require('express-sslify');
 
-//require('dotenv').config();
+// require('dotenv').config();
 /*>> Creating Database */
 mongoose.set('useCreateIndex', true); //Solution of "collection.ensureindex is deprecated mongoose" warning
-mongoose.connect(mongoDBUrl, {useNewUrlParser: true, useUnifiedTopology: true}).then((db)=>{
+mongoose.connect(mongoDBUrl, { useNewUrlParser: true, useUnifiedTopology: true }).then((db) => {
 
     console.log('Connection Established With MongoDB Atlas...');
 
-}).catch(error=> console.log(error));
+}).catch(error => console.log(error));
 /*<< Creating Database */
 
 
@@ -65,7 +65,7 @@ app.use(passport.session());
 
 
 //Create new post success flash message and user presence
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
 
     //This is to show session wise user login. A User is logged in or not
     res.locals.user = req.user || null;
@@ -76,7 +76,7 @@ app.use((req, res, next)=>{
     res.locals.error = req.flash('error'); //User Login Error Check with passport error
     //res.locals.form_errors = req.flash('form_errors'); //We need to include this to message partial and that to other layout handlebars
 
-    
+
     next();
 });
 
@@ -105,8 +105,8 @@ app.use(express.static(path.join(__dirname, 'public'))); //Static File
 //const {select, generateTime, each_upto} = require('./helpers/handlebars-helpers'); //Also need to add it to the app.engine exphbs
 /*<< Helper Functions*/
 
-const {select, generateTime, each_upto, paginate, cartLength, cartTotal, cartTotalCheckout} = require('./helpers/handlebars-helpers');
-app.engine('handlebars', expressHandlebars({defaultLayout: 'home', helpers: {select: select, generateTime: generateTime, each_upto: each_upto, paginate: paginate, cartLength: cartLength, cartTotal: cartTotal, cartTotalCheckout: cartTotalCheckout}}));
+const { select, generateTime, each_upto, paginate, cartLength, cartTotal, cartTotalCheckout } = require('./helpers/handlebars-helpers');
+app.engine('handlebars', expressHandlebars({ defaultLayout: 'home', helpers: { select: select, generateTime: generateTime, each_upto: each_upto, paginate: paginate, cartLength: cartLength, cartTotal: cartTotal, cartTotalCheckout: cartTotalCheckout } }));
 app.set('view engine', 'handlebars');
 
 /*<< Setting View Enginers -- Handlebars*/
@@ -118,7 +118,7 @@ app.set('view engine', 'handlebars');
 
 
 /*>> Body Parser */
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 /*<< Body Parser */
 
@@ -151,10 +151,10 @@ app.use('/admin', admin); //Everytime someone goes to the admin url, this execut
 
 
 //the 404 route
-app.get('*', function(req, res){
+app.get('*', function (req, res) {
     res.status(404);
     res.render('home/404');
-  });
+});
 /*<< Loading All the Routes*/
 
 
@@ -165,7 +165,7 @@ app.get('*', function(req, res){
 
 const port = process.env.PORT || 7900;
 
-app.listen(port, ()=>{
+app.listen(port, () => {
 
     console.log(`Server fired at port ${port}`);
 

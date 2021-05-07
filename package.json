@@ -30,7 +30,7 @@
     "express-sslify": "^1.2.0",
     "method-override": "^3.0.0",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.25",
+    "mongoose": "^5.12.7",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
